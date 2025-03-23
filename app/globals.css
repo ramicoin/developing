@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-satoshi);
+  background: linear-gradient(
+    to bottom left,
+    rgba(247, 153, 244, 0.4),
+    rgba(174, 180, 242, 0.125)
+  );
+    overflow-x: hidden;
+
+}
+
+/* Force the progress bar color */
+#nprogress .bar {
+  background: #ff00c8 !important; /* Your desired color */
+  height: 5px !important; /* Adjust thickness */
+}
+
+/* Ensure the progress bar shadow is also colored */
+#nprogress .peg {
+  box-shadow: 0 0 10px #ff00c8, 0 0 5px #ff00c8 !important;
+}
+
+/* Prevent Tailwind from overriding */
+#nprogress {
+  pointer-events: none !important;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.bento-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.no-scrollbar::-webkit-inner-spin-button,
+.no-scrollbar::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-scrollbar {
+  appearance: textfield; /* Ensures only numbers are accepted but removes scrollbar */
+  overflow: hidden;
+  line-height: normal;
+}
